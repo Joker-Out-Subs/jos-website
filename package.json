@@ -1,5 +1,5 @@
 {
-  "homepage" : "https://joker-out-subs.github.io/jos-website/",
+  "homepage" : ".",
   "dependencies": {
     "dompurify": "^3.1.5"
   }
