@@ -21,6 +21,6 @@ const socials = `
 `;
 // DOMPurify.sanitize(marked.parse(`<img src="x" onerror="alert('not happening')">`));
 document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById('markdown-intro').innerHTML = DOMPurify.sanitize(marked.parse(intro));
     document.getElementById('markdown-socials').innerHTML = DOMPurify.sanitize(marked.parse(socials));
+    document.getElementById('markdown-intro').innerHTML = DOMPurify.sanitize(marked.parse(intro));
 });
