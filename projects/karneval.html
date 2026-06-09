@@ -4,7 +4,7 @@
 
 I'm an AI Master's student studying data science at the
 University of Ljubljana next year! For research/technical
-opportunities (particularly NLP), let's connect! -->
+opportunities (particularly NLP), let's connect :) -->
 
 <html lang="en">
 <head>
@@ -34,8 +34,7 @@ html, body {
     justify-content: center;
     text-align: center;
     color: white;
-    padding: 20px;
-    gap: 20px;
+    padding: 50px;
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.35s ease;
@@ -46,14 +45,15 @@ html, body {
 }
 
 #centerContent img {
-    width: min(80vw, 600px);
+    width: min(95vw, 70vh);
     opacity: 1;
+    
 }
 
 #accessibilityToggle {
     position: fixed;
     top: 15px;
-    left: 15px;
+    right: 15px;
     z-index: 2000;
 
     color: white;
@@ -67,7 +67,7 @@ html, body {
 #instructionsToggle {
     position: fixed;
     top: 15px;
-    right: 15px;
+    left: 15px;
     z-index: 2000;
 
     color: white;
@@ -118,7 +118,7 @@ html, body {
 <div id="accessibilityToggle">Accessible mode: OFF</div>
 
 <div id="centerContent">
-    <img src="../assets/images/karneval_qr.png" />
+    <img src="jos-website/assets/images/karneval_qr.png" />
 </div>
 
 <div id="soloZone"></div>
@@ -171,7 +171,7 @@ accessibilityToggle.addEventListener("click", () => {
         accessibility ? "Accessible mode: ON" : "Accessible mode: OFF";
 
     soloZone.classList.toggle("visible", accessibility);
-    // soloLabel.classList.toggle("visible", accessibility);
+    soloLabel.classList.toggle("visible", accessibility);
 });
 
 soloZone.addEventListener("click", () => {
