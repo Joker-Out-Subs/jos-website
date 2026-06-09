@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+
+<!-- Site design by Ry (GitHub: @sunyshore) via @jokeroutsubs
+
+I'm an AI Master's student studying data science at the
+University of Ljubljana next year! For research/technical
+opportunities (particularly NLP), let's connect! -->
+
 <html lang="en">
 <head>
 <meta name="theme-color" content="#000000">
@@ -39,14 +46,14 @@ html, body {
 }
 
 #centerContent img {
-    width: min(80vw, 420px);
+    width: min(80vw, 600px);
     opacity: 1;
 }
 
 #accessibilityToggle {
     position: fixed;
     top: 15px;
-    right: 15px;
+    left: 15px;
     z-index: 2000;
 
     color: white;
@@ -60,7 +67,7 @@ html, body {
 #instructionsToggle {
     position: fixed;
     top: 15px;
-    left: 15px;
+    right: 15px;
     z-index: 2000;
 
     color: white;
@@ -94,7 +101,7 @@ html, body {
     text-align: center;
     color: white;
     font-size: 12px;
-    opacity: 0;
+    opacity: 0.8;
     transition: opacity 0.3s ease;
     z-index: 1500;
 }
@@ -111,21 +118,11 @@ html, body {
 <div id="accessibilityToggle">Accessible mode: OFF</div>
 
 <div id="centerContent">
-    <div>
-        <!-- Point your screen towards the stage during ODSEVI SONCA!<br><br>
-
-        Tap the bottom half of the screen to activate solo lights.<br><br>
-
-        Keep brightness high and disable auto-lock.<br>
-        In accessible mode, the lights will be less intense.<br>
-        You can share this page using the QR code. -->
-    </div>
-
     <img src="../assets/images/karneval_qr.png" />
 </div>
 
 <div id="soloZone"></div>
-<div id="soloLabel">SOLO MODE AREA</div>
+<div id="soloLabel">Tap the bottom of your screen for SOLO MODE</div>
 
 <script>
 const COLORS = [
@@ -146,7 +143,7 @@ const SOLO_COLORS = [
     "#66aaff"
 ];
 
-const NORMAL_DURATION = 6000;
+const NORMAL_DURATION = 5000;
 const SOLO_DURATION = 250;
 
 let solo = false;
@@ -174,7 +171,7 @@ accessibilityToggle.addEventListener("click", () => {
         accessibility ? "Accessible mode: ON" : "Accessible mode: OFF";
 
     soloZone.classList.toggle("visible", accessibility);
-    soloLabel.classList.toggle("visible", accessibility);
+    // soloLabel.classList.toggle("visible", accessibility);
 });
 
 soloZone.addEventListener("click", () => {
