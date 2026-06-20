@@ -57,7 +57,7 @@ html, body {
     z-index: 2000;
 
     color: white;
-    font-size: 13px;
+    font-size: 15px;
     opacity: 0.8;
     cursor: pointer;
     user-select: none;
@@ -71,7 +71,7 @@ html, body {
     z-index: 2000;
 
     color: white;
-    font-size: 13px;
+    font-size: 15px;
     opacity: 0.8;
     cursor: pointer;
     user-select: none;
@@ -100,7 +100,7 @@ html, body {
     width: 100%;
     text-align: center;
     color: white;
-    font-size: 12px;
+    font-size: 15px;
     opacity: 0.8;
     transition: opacity 0.3s ease;
     z-index: 1500;
@@ -126,25 +126,25 @@ html, body {
 
 <script>
 const COLORS = [
-    "#F5DD27",
-    "#F54927",
-    "#F527EB",
-    "#7D27F5"
+    "#f30dff",
+    "#ffff26",
+    "#ff3b3b",
+    "#fab1df",
 ];
 
 const SOLO_COLORS = [
-    "#e6e6e6",
-    "#ff4d6d",
-    "#4dffea",
-    "#fff066",
-    "#b366ff",
-    "#4dff4d",
-    "#ff9966",
-    "#66aaff"
+    "#ff3014",
+    "#faeb61",
+    "#66f224",
+    "#24f2e1",
+    "#a562fc",
+    "#fc62e3",
+    // "#ff9966",
+    // "#66aaff"
 ];
 
-const NORMAL_DURATION = 5000;
-const SOLO_DURATION = 250;
+const NORMAL_DURATION = 3000;
+const SOLO_DURATION = 400;
 
 let solo = false;
 let accessibility = false;
@@ -205,11 +205,13 @@ function rgbString(c) {
 /* lower contrast for accessibility */
 function soften(c) {
     if (!accessibility) return c;
+    const factor = 0.8;
+    const add = -20;
 
     return {
-        r: Math.round(c.r * 0.7 + 80),
-        g: Math.round(c.g * 0.7 + 80),
-        b: Math.round(c.b * 0.7 + 80)
+        r: Math.round(c.r * factor + add),
+        g: Math.round(c.g * factor + add),
+        b: Math.round(c.b * factor + add)
     };
 }
 
